@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 160" width="100%" height="100%">
+  <defs>
+    <!-- Outer C Purple to Cyan Gradient -->
+    <linearGradient id="clippix-c-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA" />
+      <stop offset="35%" stop-color="#7C3AED" />
+      <stop offset="70%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#22D3EE" />
+    </linearGradient>
+
+    <!-- X Gradient -->
+    <linearGradient id="clippix-x-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#22D3EE" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="c-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Checkerboard Pattern -->
+    <pattern id="checker-pattern" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="6" height="6" fill="#1E1B2E" />
+      <rect x="6" y="0" width="6" height="6" fill="#2E2A45" />
+      <rect x="0" y="6" width="6" height="6" fill="#2E2A45" />
+      <rect x="6" y="6" width="6" height="6" fill="#1E1B2E" />
+    </pattern>
+  </defs>
+
+  <!-- Left Logo Mark (C Shape) -->
+  <g transform="translate(10, 10)">
+    <!-- Checkerboard circle inset inside C curve -->
+    <circle cx="70" cy="70" r="32" fill="url(#checker-pattern)" />
+    
+    <!-- Stylized C path -->
+    <path d="M 112 40 
+             C 98 16, 68 8, 42 22 
+             C 16 36, 6 68 18 96 
+             C 30 124, 64 136 92 124 
+             C 106 118, 114 108, 116 100
+             L 94 92
+             C 90 98, 82 104, 72 106
+             C 52 110, 36 96, 32 80
+             C 28 60, 42 40, 62 34
+             C 78 30, 94 38, 100 48
+             Z" 
+          fill="url(#clippix-c-grad)" filter="url(#c-glow)" />
+
+    <!-- Pixel blocks floating to the right of C -->
+    <rect x="115" y="74" width="10" height="10" rx="2" fill="#3B82F6" />
+    <rect x="128" y="74" width="7" height="7" rx="1.5" fill="#22D3EE" />
+    <rect x="128" y="88" width="5" height="5" rx="1" fill="#A78BFA" />
+  </g>
+
+  <!-- Wordmark "Clippix" -->
+  <g transform="translate(170, 88)">
+    <text font-family="'Inter', system-ui, -apple-system, sans-serif" font-weight="800" font-size="62" fill="#FFFFFF" letter-spacing="-1">
+      Clipp
+    </text>
+    <!-- Dot on the second 'i' in purple -->
+    <circle cx="152" cy="-48" r="6" fill="#A78BFA" />
+    <text x="142" y="0" font-family="'Inter', system-ui, -apple-system, sans-serif" font-weight="800" font-size="62" fill="#FFFFFF" letter-spacing="-1">
+      i
+    </text>
+    <!-- Styled X with Gradient -->
+    <text x="160" y="0" font-family="'Inter', system-ui, -apple-system, sans-serif" font-weight="800" font-size="64" fill="url(#clippix-x-grad)" letter-spacing="-1">
+      x
+    </text>
+  </g>
+
+  <!-- Tagline "EDIT • REMOVE • CREATE" -->
+  <g transform="translate(172, 125)">
+    <text font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="11" fill="#A1A1AA" letter-spacing="4">
+      EDIT <tspan fill="#A78BFA">•</tspan> REMOVE <tspan fill="#22D3EE">•</tspan> CREATE
+    </text>
+  </g>
+</svg>
