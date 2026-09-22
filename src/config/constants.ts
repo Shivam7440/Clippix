@@ -49,8 +49,8 @@ export const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'pro',
     name: 'Pro',
-    priceMonthly: 19,
-    priceAnnual: 15,
+    priceMonthly: 499,
+    priceAnnual: 399,
     creditsMonthly: 250,
     popular: true,
     description: 'Ideal for creators, marketers, and e-commerce sellers.',
@@ -70,8 +70,8 @@ export const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'business',
     name: 'Business',
-    priceMonthly: 49,
-    priceAnnual: 39,
+    priceMonthly: 1999,
+    priceAnnual: 1499,
     creditsMonthly: 1000,
     description: 'Designed for teams, agencies, and high-volume operations.',
     features: [
@@ -94,7 +94,6 @@ export const SAMPLE_IMAGES = [
     id: 'sample-sneaker',
     title: 'E-commerce Sneaker',
     original: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
-    // Pre-cut high quality transparent preview
     cutout: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
     category: 'E-Commerce'
   },

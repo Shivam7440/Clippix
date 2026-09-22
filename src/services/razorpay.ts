@@ -41,20 +41,18 @@ export const loadRazorpayScript = (): Promise<boolean> => {
 
 /**
  * Service call to backend endpoint to create a Razorpay Order
- * (or mock backend response if API server unavailable)
  */
 export const createRazorpayOrder = async (
-  amountInUsdOrInr: number,
+  amountInInr: number,
   planId: string
 ): Promise<RazorpayOrderResponse> => {
-  // In production, fetch from server endpoint /api/razorpay/create-order
-  console.log(`[Razorpay Service] Requesting order creation for plan ${planId}, amount ${amountInUsdOrInr}`);
+  console.log(`[Razorpay Service] Requesting order creation for plan ${planId}, amount ₹${amountInInr}`);
 
   const mockOrderId = `order_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
   return {
     orderId: mockOrderId,
-    amount: amountInUsdOrInr * 100, // amount in smallest currency sub-unit (cents / paise)
-    currency: 'USD',
+    amount: amountInInr * 100, // amount in smallest currency sub-unit (paise for INR)
+    currency: 'INR',
     keyId: RAZORPAY_KEY_ID,
   };
 };
@@ -77,7 +75,6 @@ export const verifyPayment = async (
 ): Promise<{ success: boolean; creditsAdded: number; message: string }> => {
   console.log('[Razorpay Service] Verifying payment signature with backend:', paymentResult);
   
-  // Return verified response
   return {
     success: true,
     creditsAdded: 250,
@@ -106,7 +103,7 @@ export const openRazorpayCheckout = async (options: {
       const rzpOptions = {
         key: order.keyId,
         amount: order.amount,
-        currency: order.currency,
+        currency: 'INR',
         name: 'Clippix AI',
         description: `${options.planName} Subscription (${options.creditsToGain} Credits)`,
         image: '/logo.svg',

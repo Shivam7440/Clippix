@@ -26,7 +26,7 @@ export const AdminDashboard: React.FC = () => {
     );
   }
 
-  // Mock Admin Tables Data
+  // Mock Admin Tables Data in INR
   const mockUsers = [
     { id: 'usr-1', name: 'Alex Morgan', email: 'alex.creator@clippix.ai', plan: 'pro', credits: 24, status: 'active', joined: '2026-08-15' },
     { id: 'usr-2', name: 'Sarah Jenkins', email: 'sarah@studioart.com', plan: 'business', credits: 940, status: 'active', joined: '2026-09-01' },
@@ -35,9 +35,9 @@ export const AdminDashboard: React.FC = () => {
   ];
 
   const mockSubscriptions = [
-    { id: 'sub-901', user: 'sarah@studioart.com', plan: 'Business Annual', amount: 468, status: 'paid', razorpayId: 'pay_sub_8831' },
-    { id: 'sub-902', user: 'alex.creator@clippix.ai', plan: 'Pro Monthly', amount: 19, status: 'paid', razorpayId: 'pay_sub_8832' },
-    { id: 'sub-903', user: 'elena@design.co', plan: 'Pro Monthly', amount: 19, status: 'paid', razorpayId: 'pay_sub_8833' },
+    { id: 'sub-901', user: 'sarah@studioart.com', plan: 'Business Annual', amount: 17988, status: 'paid', razorpayId: 'pay_sub_8831' },
+    { id: 'sub-902', user: 'alex.creator@clippix.ai', plan: 'Pro Monthly', amount: 499, status: 'paid', razorpayId: 'pay_sub_8832' },
+    { id: 'sub-903', user: 'elena@design.co', plan: 'Pro Monthly', amount: 499, status: 'paid', razorpayId: 'pay_sub_8833' },
   ];
 
   const handleRetryJob = (jobId: string) => {
@@ -84,9 +84,9 @@ export const AdminDashboard: React.FC = () => {
         <div className="p-6 rounded-3xl bg-[#18181B] border border-[#27272A] space-y-2">
           <div className="flex justify-between items-center text-[#A1A1AA]">
             <span className="text-xs font-bold uppercase">Monthly Revenue</span>
-            <span className="text-xs text-emerald-400 font-extrabold">$</span>
+            <span className="text-xs text-emerald-400 font-extrabold">₹</span>
           </div>
-          <p className="text-3xl font-extrabold text-white">$14,290</p>
+          <p className="text-3xl font-extrabold text-white">₹2,48,900</p>
           <span className="text-[10px] text-[#22D3EE] font-semibold">Processed via Razorpay</span>
         </div>
 
@@ -239,7 +239,7 @@ export const AdminDashboard: React.FC = () => {
                     <td className="py-3.5 px-4 text-[#A78BFA] font-mono">{s.razorpayId}</td>
                     <td className="py-3.5 px-4 font-semibold">{s.user}</td>
                     <td className="py-3.5 px-4 text-[#22D3EE] font-bold">{s.plan}</td>
-                    <td className="py-3.5 px-4 font-extrabold text-white">${s.amount}</td>
+                    <td className="py-3.5 px-4 font-extrabold text-white">{formatCurrency(s.amount)}</td>
                     <td className="py-3.5 px-4">
                       <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-emerald-500/20 text-emerald-400">
                         {s.status}

@@ -16,9 +16,9 @@ export const Billing: React.FC = () => {
   const [topUpModalOpen, setTopUpModalOpen] = useState(false);
   const [cancelModalOpen, setCancelModalOpen] = useState(false);
 
-  const handleBuyCreditPack = (packAmount: number, priceUsd: number) => {
+  const handleBuyCreditPack = (packAmount: number, priceInr: number) => {
     openRazorpayCheckout({
-      amount: priceUsd,
+      amount: priceInr,
       planName: `${packAmount} Extra Credits Pack`,
       creditsToGain: packAmount,
       userEmail: user?.email || 'user@clippix.ai',
@@ -177,14 +177,14 @@ export const Billing: React.FC = () => {
             <div className="p-5 rounded-2xl bg-[#09090B] border border-[#27272A] space-y-3">
               <div className="flex justify-between items-center">
                 <span className="text-sm font-bold text-white">50 Credits</span>
-                <span className="text-base font-extrabold text-[#A78BFA]">$5</span>
+                <span className="text-base font-extrabold text-[#A78BFA]">₹199</span>
               </div>
-              <p className="text-[11px] text-[#71717A]">$0.10 per removal</p>
+              <p className="text-[11px] text-[#71717A]">₹3.98 per removal</p>
               <button
-                onClick={() => handleBuyCreditPack(50, 5)}
+                onClick={() => handleBuyCreditPack(50, 199)}
                 className="w-full py-2.5 rounded-xl font-bold text-xs text-white bg-[#7C3AED] hover:bg-[#6D28D9] transition-colors"
               >
-                Pay $5 via Razorpay
+                Pay ₹199 via Razorpay
               </button>
             </div>
 
@@ -194,14 +194,14 @@ export const Billing: React.FC = () => {
               </span>
               <div className="flex justify-between items-center">
                 <span className="text-sm font-bold text-white">200 Credits</span>
-                <span className="text-base font-extrabold text-[#22D3EE]">$15</span>
+                <span className="text-base font-extrabold text-[#22D3EE]">₹599</span>
               </div>
-              <p className="text-[11px] text-[#71717A]">$0.07 per removal</p>
+              <p className="text-[11px] text-[#71717A]">₹2.99 per removal</p>
               <button
-                onClick={() => handleBuyCreditPack(200, 15)}
+                onClick={() => handleBuyCreditPack(200, 599)}
                 className="w-full py-2.5 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] hover:scale-105 transition-transform"
               >
-                Pay $15 via Razorpay
+                Pay ₹599 via Razorpay
               </button>
             </div>
           </div>
