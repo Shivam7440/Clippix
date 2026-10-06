@@ -63,6 +63,14 @@ export const Navbar: React.FC = () => {
           >
             About
           </Link>
+          <Link
+            to="/contact"
+            className={`text-sm font-medium transition-colors hover:text-[#A78BFA] ${
+              isActive('/contact') ? 'text-[#A78BFA] font-semibold' : 'text-[#A1A1AA]'
+            }`}
+          >
+            Contact
+          </Link>
           {isAdmin && (
             <Link
               to="/admin"

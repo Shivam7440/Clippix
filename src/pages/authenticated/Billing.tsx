@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useCredits } from '../../context/CreditContext';
 import { useToast } from '../../context/ToastContext';
@@ -92,12 +93,12 @@ export const Billing: React.FC = () => {
         {/* Action triggers */}
         <div className="pt-6 mt-6 border-t border-[#27272A] flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <a
-              href="/pricing"
+            <Link
+              to="/pricing"
               className="px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] hover:scale-105 transition-transform"
             >
               Upgrade / Change Plan
-            </a>
+            </Link>
             {user?.plan !== 'free' && (
               <button
                 onClick={() => setCancelModalOpen(true)}

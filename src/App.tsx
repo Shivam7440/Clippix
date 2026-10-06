@@ -18,6 +18,13 @@ import { Login } from './pages/public/Login';
 import { Signup } from './pages/public/Signup';
 import { ForgotPassword } from './pages/public/ForgotPassword';
 
+// Razorpay Merchant Compliance Mandatory Pages
+import { PrivacyPolicy } from './pages/public/PrivacyPolicy';
+import { RefundPolicy } from './pages/public/RefundPolicy';
+import { ContactUs } from './pages/public/ContactUs';
+import { ShippingPolicy } from './pages/public/ShippingPolicy';
+import { TermsConditions } from './pages/public/TermsConditions';
+
 // Authenticated Pages
 import { Dashboard } from './pages/authenticated/Dashboard';
 import { RemoveBackground } from './pages/authenticated/RemoveBackground';
@@ -66,7 +73,7 @@ export const App: React.FC = () => {
             <Router>
               <ScrollToTop />
               <Routes>
-                {/* Public Routes */}
+                {/* Public Base Routes */}
                 <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
                 <Route path="/features" element={<PublicLayout><Features /></PublicLayout>} />
                 <Route path="/pricing" element={<PublicLayout><Pricing /></PublicLayout>} />
@@ -74,6 +81,13 @@ export const App: React.FC = () => {
                 <Route path="/login" element={<PublicLayout><Login /></PublicLayout>} />
                 <Route path="/signup" element={<PublicLayout><Signup /></PublicLayout>} />
                 <Route path="/forgot-password" element={<PublicLayout><ForgotPassword /></PublicLayout>} />
+
+                {/* Razorpay Merchant Compliance Mandatory Routes */}
+                <Route path="/privacy-policy" element={<PublicLayout><PrivacyPolicy /></PublicLayout>} />
+                <Route path="/refund-policy" element={<PublicLayout><RefundPolicy /></PublicLayout>} />
+                <Route path="/contact" element={<PublicLayout><ContactUs /></PublicLayout>} />
+                <Route path="/shipping-policy" element={<PublicLayout><ShippingPolicy /></PublicLayout>} />
+                <Route path="/terms-and-conditions" element={<PublicLayout><TermsConditions /></PublicLayout>} />
 
                 {/* Authenticated Workspace Routes */}
                 <Route path="/dashboard" element={<AppLayout><Dashboard /></AppLayout>} />
